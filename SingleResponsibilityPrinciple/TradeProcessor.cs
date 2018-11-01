@@ -61,7 +61,14 @@ namespace SingleResponsibilityPrinciple
                 return false;
             }
 
-            int tradeAmount;
+            decimal tradePriceRange;
+            decimal.TryParse(fields[2], out tradePriceRange);
+            if (tradePriceRange < 1000 || tradePriceRange > 100000)
+                return false;
+
+
+
+                int tradeAmount;
             if (!int.TryParse(fields[1], out tradeAmount))
             {
                 LogMessage("WARN", " Trade amount on line {0} not a valid integer: '{1}'", currentLine, fields[1]);
@@ -104,7 +111,9 @@ namespace SingleResponsibilityPrinciple
         private void StoreTrades(IEnumerable<TradeRecord> trades)
         {
             LogMessage("INFO", "  Connecting to Database");
-            using (var connection = new System.Data.SqlClient.SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\tradedatabase.mdf;Integrated Security=True;Connect Timeout=30;"))
+            string connectSqlServer = "Data Source = athena.css.edu; Initial Catalog = CIS3285; Persist Security Info = True; User ID = tgibbons; Password = Data Source = athena.css.edu; Initial Catalog = CIS3285; Persist Security Info = True; User ID = tgibbons; Password = Saints4CSS";
+            using (var connection = new System.Data.SqlClient.SqlConnection(connectSqlServer))
+          //  using (var connection = new System.Data.SqlClient.SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\tradedatabase.mdf;Integrated Security=True;Connect Timeout=30;"))
             {
                 connection.Open();
                 using (var transaction = connection.BeginTransaction())

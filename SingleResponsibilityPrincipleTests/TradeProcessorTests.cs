@@ -16,7 +16,9 @@ namespace SingleResponsibilityPrinciple.Tests
 
         private int CountDbRecords()
         {
-            using (var connection = new System.Data.SqlClient.SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\tradedatabase.mdf;Integrated Security=True;Connect Timeout=30;"))
+            string connectSqlServer = "Data Source = athena.css.edu; Initial Catalog = CIS3285; Persist Security Info = True; User ID = tgibbons; Password = Data Source = athena.css.edu; Initial Catalog = CIS3285; Persist Security Info = True; User ID = tgibbons; Password = Saints4CSS";
+            using (var connection = new System.Data.SqlClient.SqlConnection(connectSqlServer))
+       //     using (var connection = new System.Data.SqlClient.SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\tradedatabase.mdf;Integrated Security=True;Connect Timeout=30;"))
             {
                 connection.Open();
                 string myScalarQuery = "select count(*) from trade";
@@ -98,6 +100,11 @@ namespace SingleResponsibilityPrinciple.Tests
             // Assert
             Assert.AreEqual(endCount - startCount, 2);
         }
+
+
+
+
+
 
     }
 }

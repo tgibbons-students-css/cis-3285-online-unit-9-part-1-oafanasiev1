@@ -4,3 +4,10 @@ C:\Users\tgibbons\Source\Repos\cis-3285-unit-9-practice-tgibbons-css\SingleRespo
 C:\Users\tgibbons\Source\Repos\cis-3285-unit-9-practice-tgibbons-css\SingleResponsibilityPrinciple\obj\Debug\SingleResponsibilityPrinciple.csproj.CoreCompileInputs.cache
 C:\Users\tgibbons\Source\Repos\cis-3285-unit-9-practice-tgibbons-css\SingleResponsibilityPrinciple\obj\Debug\SingleResponsibilityPrinciple.exe
 C:\Users\tgibbons\Source\Repos\cis-3285-unit-9-practice-tgibbons-css\SingleResponsibilityPrinciple\obj\Debug\SingleResponsibilityPrinciple.pdb
+C:\Users\oafanasiev\Source\Repos\cis-3285-online-unit-9-part-1-oafanasiev1\SingleResponsibilityPrinciple\bin\Debug\SingleResponsibilityPrinciple.exe.config
+C:\Users\oafanasiev\Source\Repos\cis-3285-online-unit-9-part-1-oafanasiev1\SingleResponsibilityPrinciple\bin\Debug\SingleResponsibilityPrinciple.exe
+C:\Users\oafanasiev\Source\Repos\cis-3285-online-unit-9-part-1-oafanasiev1\SingleResponsibilityPrinciple\bin\Debug\SingleResponsibilityPrinciple.pdb
+C:\Users\oafanasiev\Source\Repos\cis-3285-online-unit-9-part-1-oafanasiev1\SingleResponsibilityPrinciple\obj\Debug\SingleResponsibilityPrinciple.csprojAssemblyReference.cache
+C:\Users\oafanasiev\Source\Repos\cis-3285-online-unit-9-part-1-oafanasiev1\SingleResponsibilityPrinciple\obj\Debug\SingleResponsibilityPrinciple.csproj.CoreCompileInputs.cache
+C:\Users\oafanasiev\Source\Repos\cis-3285-online-unit-9-part-1-oafanasiev1\SingleResponsibilityPrinciple\obj\Debug\SingleResponsibilityPrinciple.exe
+C:\Users\oafanasiev\Source\Repos\cis-3285-online-unit-9-part-1-oafanasiev1\SingleResponsibilityPrinciple\obj\Debug\SingleResponsibilityPrinciple.pdb
