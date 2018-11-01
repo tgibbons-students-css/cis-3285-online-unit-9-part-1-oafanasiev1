@@ -58,17 +58,20 @@ namespace SingleResponsibilityPrinciple
             if (fields[0].Length != 6)
             {
                 LogMessage("WARN", " Trade currencies on line {0} malformed: '{1}'", currentLine, fields[0]);
+                
                 return false;
             }
 
             decimal tradePriceRange;
-            decimal.TryParse(fields[2], out tradePriceRange);
+            decimal.TryParse(fields[1], out tradePriceRange);
             if (tradePriceRange < 1000 || tradePriceRange > 100000)
+            {
+                LogMessage("WARN", "Trade is out of the range: '{1}'", currentLine, fields[1]);
                 return false;
+            }
 
 
-
-                int tradeAmount;
+            int tradeAmount;
             if (!int.TryParse(fields[1], out tradeAmount))
             {
                 LogMessage("WARN", " Trade amount on line {0} not a valid integer: '{1}'", currentLine, fields[1]);
@@ -87,8 +90,32 @@ namespace SingleResponsibilityPrinciple
 
         private void LogMessage(string msgType, string message, params object[] args)
         {
-            Console.WriteLine(msgType+ " :" +message, args);
+            Console.WriteLine(msgType + " :" + message, args);
+            using (StreamWriter logfile = File.AppendText("log.xml"))
+            {
+                logfile.WriteLine("<log><type>" + msgType + "</type><message>" + message + "</message></log> ", args);
+            }
+           
         }
+
+
+        public List<string> ReadURLTradeData(string URL)
+        {
+            var tradeData = new List<string>();
+            // create a web client and use it to read the file stored at the given URL
+            var client = new WebClient();
+            using (var stream = client.OpenRead(URL))
+            using (var reader = new StreamReader(stream))
+            {
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    tradeData.Add(line);
+                }
+            }
+            return tradeData;
+        }
+
 
         private TradeRecord MapTradeDataToTradeRecord(string[] fields)
         {

@@ -17,6 +17,9 @@ namespace SingleResponsibilityPrinciple
             tradeProcessor.ProcessTrades(tradeStream);
 
             Console.ReadKey();
+
+            string url = "http://faculty.css.edu/tgibbons/trades4.txt";
+            tradeProcessor.ReadURLTradeData(url);
         }
     }
 }
